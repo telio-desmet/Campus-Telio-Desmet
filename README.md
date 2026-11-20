@@ -1,2 +1,2 @@
-# Campus-T-lio-Desmet
+# Campus-Telio-Desmet
 Exercice campus
