@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node campus.js",
-    "dev": "node --watch campus.js"
+    "dev": "node --watch campus.js",
+    "versions": "node --version && npm --version"
   },
   "keywords": [],
   "author": "",
