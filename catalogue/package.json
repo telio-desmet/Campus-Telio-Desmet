@@ -1,0 +1,13 @@
+{
+  "name": "catalogue",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsc & node dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^6.0.3"
+  }
+}

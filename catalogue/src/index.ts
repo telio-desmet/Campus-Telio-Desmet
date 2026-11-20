@@ -1,0 +1,54 @@
+interface Product {
+  id: number
+  name: string
+  price: number
+  description?: string
+}
+
+const products: Product[] = [
+  { id: 1, name: 'Clavier mécanique', price: 89, description: 'Touches rouges, rétroéclairage RGB' },
+  { id: 2, name: 'Souris sans fil', price: 35, description: 'Capteur optique, 6 boutons' },
+  { id: 3, name: 'Écran 27 pouces', price: 249, description: 'Dalle IPS, 144 Hz' },
+  { id: 4, name: 'Casque audio', price: 75, description: 'Réduction de bruit active' },
+  { id: 5, name: 'Câble USB-C', price: 12 },
+]
+
+function findById(products: Product[], id: number): Product | undefined {
+  return products.find((product: Product) => product.id === id)
+}
+
+function cheaperThan(products: Product[], max: number): Product[] {
+  return products.filter((product: Product) => product.price < max)
+}
+
+const id = Number(process.argv[2])
+const product = findById(products, id)
+
+if (product === undefined) {
+  console.log(`Produit ${id} introuvable`)
+} else {
+  console.log(`Nom : ${product.name}`)
+  console.log(`Prix : ${product.price} €`)
+  console.log(`Description : ${product.description ?? 'Pas de description'}`)
+}
+
+console.log('Produits à moins de 50 € :')
+for (const cheap of cheaperThan(products, 50)) {
+  console.log(`- ${cheap.name}`)
+}
+
+/*
+  06 — Erreurs à provoquer une par une, à noter, puis à annuler :
+
+  1) Faute de frappe
+     console.log(product.nom)
+     -> TS2339 : Property 'nom' does not exist on type 'Product'. Did you mean 'name'?
+
+  2) Mauvais type
+     findById(products, "2")
+     -> TS2345 : Argument of type 'string' is not assignable to parameter of type 'number'.
+
+  3) Absence non traitée
+     console.log(product.description.toUpperCase())
+     -> TS18048 : 'product.description' is possibly 'undefined'.
+*/
