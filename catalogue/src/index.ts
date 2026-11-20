@@ -36,19 +36,3 @@ console.log('Produits à moins de 50 € :')
 for (const cheap of cheaperThan(products, 50)) {
   console.log(`- ${cheap.name}`)
 }
-
-/*
-  06 — Erreurs à provoquer une par une, à noter, puis à annuler :
-
-  1) Faute de frappe
-     console.log(product.nom)
-     -> TS2339 : Property 'nom' does not exist on type 'Product'. Did you mean 'name'?
-
-  2) Mauvais type
-     findById(products, "2")
-     -> TS2345 : Argument of type 'string' is not assignable to parameter of type 'number'.
-
-  3) Absence non traitée
-     console.log(product.description.toUpperCase())
-     -> TS18048 : 'product.description' is possibly 'undefined'.
-*/
