@@ -11,8 +11,5 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
-  "dependencies": {
-    "slugify": "^1.6.9"
-  }
+  "type": "module"
 }
